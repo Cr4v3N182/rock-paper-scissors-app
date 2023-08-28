@@ -20,6 +20,12 @@ computer_choice_label.grid(row=3, sticky=E)
 outcome_label = Label(master,font=("Calibri", 12))
 outcome_label.grid(row=3, sticky=N)
 
-
+#Buttons
+Button(master, text="Rock", width=15,
+       command=lambda:outcome_handler("rock")).grid(row=4, sticky=W, padx=5, pady=5)
+Button(master, text="Paper", width=15,
+       command=lambda:outcome_handler("paper")).grid(row=4, sticky=N, pady=5)
+Button(master, text="Scissors", width=15,
+       command=lambda:outcome_handler("scissors")).grid(row=4, sticky=E, padx=5, pady=5)
 
 master.mainloop()
