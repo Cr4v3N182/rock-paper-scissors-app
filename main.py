@@ -1,6 +1,21 @@
 from tkinter import *
 import random
 
+#Dictionary and variables:
+comp_score = 0
+player_score = 0
+
+#Functions
+def outcome_handler(user_choice):
+    global comp_score
+    global player_score
+    outcomes = ["rock", "paper", "scissors"]
+    random_number = random.randint(0, 2)
+    computer_choice = outcomes[random_number]
+
+    player_choice_label.config(fg="green", text="Player Choice: " + str(user_choice))
+    computer_choice_label.config(fg="red", text="Computer Choice: " + str(computer_choice))
+
 #main screen
 master = Tk()
 master.title("RPS")
@@ -27,5 +42,8 @@ Button(master, text="Paper", width=15,
        command=lambda:outcome_handler("paper")).grid(row=4, sticky=N, pady=5)
 Button(master, text="Scissors", width=15,
        command=lambda:outcome_handler("scissors")).grid(row=4, sticky=E, padx=5, pady=5)
+
+#Dummy label
+Label(master).grid(row=5, )
 
 master.mainloop()
